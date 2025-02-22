@@ -20,6 +20,9 @@ def billing(prod):
             continue
         Temp += quantity * prod[product]
         purchase[product] = purchase.get(product, 0) + quantity
+    if not purchase:
+        print("\nNo items purchased.\n\nThank You!!\nPlease visit again!!\n\n")
+        return
     while True:
         member = input("\nMembership Card (Gold, Silver, Bronze, or None): ").capitalize().strip()
         if member in {"Gold", "Silver", "Bronze", "None"}:
