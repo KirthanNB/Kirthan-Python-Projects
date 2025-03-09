@@ -69,10 +69,9 @@ This repository is licensed under the MIT License. See the LICENSE file for more
 
 🌟 Contact & Acknowledgments
 
-Author: Kirthan NB
+Author: KirthanNB
 
-LinkedIn: [Your Profile Link](https://www.linkedin.com/in/kirthan-nb-8b522530b/)
+LinkedIn: [Kirthan's Profile Link](https://www.linkedin.com/in/kirthan-nb-8b522530b/)
 
-GitHub: KirthanNB
 
 If you find this repository useful, don't forget to ⭐ star it!
