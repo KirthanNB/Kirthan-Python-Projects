@@ -15,7 +15,7 @@ Before running this project, ensure you have the following installed:
 
 2️⃣ Install required Python packages  
    ```sh
-   pip install speechrecognition pyttsx3 requests
+   pip install speechrecognition pyttsx3 requests keyboard
    ```
 
 3️⃣ Install additional dependencies (for speech recognition)  

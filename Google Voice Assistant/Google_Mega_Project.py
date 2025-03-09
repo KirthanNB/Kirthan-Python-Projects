@@ -83,7 +83,7 @@ def gemini(command, GEMINI_API_KEY, speechortext):
 
             data = {
                 "contents": [{
-                    "parts": [{"text": a + ', (keep maximum respose limit in 50 words)'}]
+                    "parts": [{"text": a + ', (keep response limit in 80 words untill and unless specified out of this box)'}]
                 }]
             }
 
