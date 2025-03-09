@@ -3,6 +3,8 @@ import webbrowser
 import pyttsx3
 import requests
 import time
+import threading
+import keyboard
 
 def command_generator(speechortext):
     engine = pyttsx3.init()
@@ -81,7 +83,7 @@ def gemini(command, GEMINI_API_KEY, speechortext):
 
             data = {
                 "contents": [{
-                    "parts": [{"text": a + ', (keep maximum respose limit in 80 words)'}]
+                    "parts": [{"text": a + ', (keep maximum respose limit in 50 words)'}]
                 }]
             }
 
@@ -90,8 +92,11 @@ def gemini(command, GEMINI_API_KEY, speechortext):
             if response.status_code == 200:
                 rep=response.json().get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "No response found.")
                 print(f"\n{rep}")
-                engine.say(rep)
-                engine.runAndWait()
+                speak_thread =threading.Thread(target=lambda:(engine.say(rep), engine.runAndWait()))
+                speak_thread.start()
+                keyboard.read_event()
+                engine.stop()
+                
             else:
                 print("Error:", response.status_code, response.text)
             a=command_generator(speechortext)
